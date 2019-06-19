@@ -144,9 +144,10 @@ public class PlayerController : MonoBehaviour
 
     bool overhead_check() {
         RaycastHit hit;
-        bool isStruck;
+        bool isStruck=false;
         if (Physics.Raycast(piviot.transform.position, Vector3.up, out hit, overheadClearance))
         {
+            if(!hit.collider.isTrigger)
             isStruck = true;
         }
         else {
@@ -164,15 +165,13 @@ public class PlayerController : MonoBehaviour
     bool GroundedCheck()
     {
         RaycastHit hit;
-        bool isGrounded;
+        bool isGrounded=false;
         if (Physics.Raycast(transform.position, Vector3.down, out hit, GroundClearance))
         {
+            if(!hit.collider.isTrigger)
             isGrounded = true;
         }
-        else
-        {
-            isGrounded = false;
-        }
+      
         Anim.SetBool("Grounded", isGrounded);
         return isGrounded;
     }
