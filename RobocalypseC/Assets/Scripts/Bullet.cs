@@ -24,7 +24,7 @@ public class Bullet : MonoBehaviour {
 		bulletRB.AddForce (bulletDirection, ForceMode.Force);
         Destroy(gameObject, BulletLife);
 	}
-	void OnCollisionEnter(Collision col){
+	void OnTriggerEnter(Collider col){
         if ((col.gameObject.tag == "Enemy" && FromPlayer)||(col.gameObject.tag=="Player"&&!FromPlayer)) {
             col.gameObject.GetComponent<HealthAndShield>().damage(damage, healthDamageRatio, ShieldDamageRatio);
         }

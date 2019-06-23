@@ -4,34 +4,40 @@ using UnityEngine;
 
 public class PlayerController : MonoBehaviour
 {
+    private GunPlaceHolder gunHolder;
+    public gameManager manager;
     private Animator Anim;
     [Range(0, 1)]
-    public float LookDirection;
-    public bool facingPositive;
+    [Header("Movement")]
     public float moveDirection;
-    public float  WalkSpeed;
+    public float WalkSpeed;
     public float RunSpeed;
     private float Speed;
+    private float inAirtime = 0;
     public float Gravity;
+    public float jumpForce;
+    float initialVelocity = 0;
+    private float verticalVelocity;
+    [Header("Status")]
+    public bool running;
+    public bool is_inAir;
+    public bool movingForward;
+    public bool isShooting;
+    [Header("Sensors")]
+    public bool facingPositive;
+    public float overheadClearance;
+    public float GroundClearance;
     public GameObject piviot;
     private CharacterController Controller;
-    public float jumpForce;
-    private float verticalVelocity;
-    public float GroundClearance;
-    private float inAirtime = 0;
-    public bool is_inAir;
-    float initialVelocity = 0;
-    public float overheadClearance;
-    public bool running;
-    public bool movingForward;
-    private GunPlaceHolder gunHolder;
-    
+ 
+
+ 
     
     // Start is called before the first frame update
     void Start()
     {
         gunHolder = GetComponentInChildren<GunPlaceHolder>();
-        
+        Gravity = manager.Gravity;
     }
 
 
@@ -43,9 +49,17 @@ public class PlayerController : MonoBehaviour
         move(); 
         point_at_mouse();
         //Debug.Log(verticalVelocity+" "+inAirtime);
+        if (Input.GetAxis("Fire1") == 1)
+        {
+            
+            isShooting = gunHolder.shoot() ;
+        }
+        else
+        {
+           isShooting = false;
+        }
 
-      
-        
+
     }
 
 
@@ -101,7 +115,7 @@ public class PlayerController : MonoBehaviour
         //animation state
         int animationState;
         //Debug.Log(gunHolder.isShooting);
-        if (movingForward && gunHolder.isShooting == false)
+        if (movingForward && isShooting == false)
         {
             running = true;
         }

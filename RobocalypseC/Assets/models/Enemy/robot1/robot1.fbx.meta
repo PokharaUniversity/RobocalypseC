@@ -4,6 +4,9 @@ ModelImporter:
   serializedVersion: 25
   internalIDToNameTable:
   - first:
+      74: -6271350374613663605
+    second: look_down45_rifle
+  - first:
       74: 8567724478431378512
     second: metarig|default
   - first:
@@ -16,8 +19,20 @@ ModelImporter:
       74: -5702790290809462792
     second: metarig|look_down_rifle
   - first:
-      74: 3949241394196200712
-    second: metarig|look_up_45_rifle
+      74: -7725087593171237365
+    second: metarig|LookDown45Rifle
+  - first:
+      74: 8085046139224619812
+    second: metarig|LookDownRifle
+  - first:
+      74: -6181205375160507981
+    second: metarig|LookFrontRifle
+  - first:
+      74: -1035807416935886746
+    second: metarig|lookUp45Rifle
+  - first:
+      74: 7398135113999307937
+    second: metarig|LookUpRifle
   - first:
       74: -887982601649841707
     second: metarig|metarigAction
@@ -27,7 +42,12 @@ ModelImporter:
   - first:
       74: -4027686426356288868
     second: metarig|Walking
-  externalObjects: {}
+  externalObjects:
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: No Name
+    second: {fileID: 2100000, guid: a9a504fe510723a4d88d2239635984b3, type: 2}
   materials:
     importMaterials: 1
     materialName: 0
@@ -55,35 +75,6 @@ ModelImporter:
     extraExposedTransformPaths: []
     extraUserProperties: []
     clipAnimations:
-    - serializedVersion: 16
-      name: metarig|default
-      takeName: metarig|default
-      internalID: 8567724478431378512
-      firstFrame: 0
-      lastFrame: 1
-      wrapMode: 0
-      orientationOffsetY: 0
-      level: 0
-      cycleOffset: 0
-      loop: 0
-      hasAdditiveReferencePose: 0
-      loopTime: 0
-      loopBlend: 0
-      loopBlendOrientation: 0
-      loopBlendPositionY: 0
-      loopBlendPositionXZ: 0
-      keepOriginalOrientation: 0
-      keepOriginalPositionY: 1
-      keepOriginalPositionXZ: 0
-      heightFromFeet: 0
-      mirror: 0
-      bodyMask: 01000000010000000100000001000000010000000100000001000000010000000100000001000000010000000100000001000000
-      curves: []
-      events: []
-      transformMask: []
-      maskType: 3
-      maskSource: {instanceID: 0}
-      additiveReferencePoseFrame: 0
     - serializedVersion: 16
       name: metarig|idle
       takeName: metarig|idle
@@ -118,7 +109,7 @@ ModelImporter:
       takeName: metarig|jump_start
       internalID: 3371760087794469991
       firstFrame: 0
-      lastFrame: 2
+      lastFrame: 16
       wrapMode: 0
       orientationOffsetY: 0
       level: 0
@@ -143,9 +134,9 @@ ModelImporter:
       maskSource: {instanceID: 0}
       additiveReferencePoseFrame: 0
     - serializedVersion: 16
-      name: metarig|look_down_rifle
-      takeName: metarig|look_down_rifle
-      internalID: -5702790290809462792
+      name: metarig|LookDown45Rifle
+      takeName: metarig|LookDown45Rifle
+      internalID: -7725087593171237365
       firstFrame: 0
       lastFrame: 1
       wrapMode: 0
@@ -172,9 +163,9 @@ ModelImporter:
       maskSource: {instanceID: 0}
       additiveReferencePoseFrame: 0
     - serializedVersion: 16
-      name: metarig|look_up_45_rifle
-      takeName: metarig|look_up_45_rifle
-      internalID: 3949241394196200712
+      name: metarig|LookDownRifle
+      takeName: metarig|LookDownRifle
+      internalID: 8085046139224619812
       firstFrame: 0
       lastFrame: 1
       wrapMode: 0
@@ -201,9 +192,67 @@ ModelImporter:
       maskSource: {instanceID: 0}
       additiveReferencePoseFrame: 0
     - serializedVersion: 16
-      name: metarig|metarigAction
-      takeName: metarig|metarigAction
-      internalID: -887982601649841707
+      name: metarig|LookFrontRifle
+      takeName: metarig|LookFrontRifle
+      internalID: -6181205375160507981
+      firstFrame: 0
+      lastFrame: 1
+      wrapMode: 0
+      orientationOffsetY: 0
+      level: 0
+      cycleOffset: 0
+      loop: 0
+      hasAdditiveReferencePose: 0
+      loopTime: 0
+      loopBlend: 0
+      loopBlendOrientation: 0
+      loopBlendPositionY: 0
+      loopBlendPositionXZ: 0
+      keepOriginalOrientation: 0
+      keepOriginalPositionY: 1
+      keepOriginalPositionXZ: 0
+      heightFromFeet: 0
+      mirror: 0
+      bodyMask: 01000000010000000100000001000000010000000100000001000000010000000100000001000000010000000100000001000000
+      curves: []
+      events: []
+      transformMask: []
+      maskType: 3
+      maskSource: {instanceID: 0}
+      additiveReferencePoseFrame: 0
+    - serializedVersion: 16
+      name: metarig|lookUp45Rifle
+      takeName: metarig|lookUp45Rifle
+      internalID: -1035807416935886746
+      firstFrame: 0
+      lastFrame: 1
+      wrapMode: 0
+      orientationOffsetY: 0
+      level: 0
+      cycleOffset: 0
+      loop: 0
+      hasAdditiveReferencePose: 0
+      loopTime: 0
+      loopBlend: 0
+      loopBlendOrientation: 0
+      loopBlendPositionY: 0
+      loopBlendPositionXZ: 0
+      keepOriginalOrientation: 0
+      keepOriginalPositionY: 1
+      keepOriginalPositionXZ: 0
+      heightFromFeet: 0
+      mirror: 0
+      bodyMask: 01000000010000000100000001000000010000000100000001000000010000000100000001000000010000000100000001000000
+      curves: []
+      events: []
+      transformMask: []
+      maskType: 3
+      maskSource: {instanceID: 0}
+      additiveReferencePoseFrame: 0
+    - serializedVersion: 16
+      name: metarig|LookUpRifle
+      takeName: metarig|LookUpRifle
+      internalID: 7398135113999307937
       firstFrame: 0
       lastFrame: 1
       wrapMode: 0
