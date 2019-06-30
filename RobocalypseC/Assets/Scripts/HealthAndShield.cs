@@ -45,7 +45,6 @@ public class HealthAndShield : MonoBehaviour
             StartCoroutine(ShieldRechargeDelayCounter());
         }
         else {
-
             damage -= Shield / ShieldDamageRatio;
             Shield = 0;
             if (health > damage * healthDamageRatio)
@@ -54,8 +53,10 @@ public class HealthAndShield : MonoBehaviour
                 health -= damage * healthDamageRatio;
             }
             else {
+                Debug.Log("Death");
                 health = 0;
                 IsAlive = false;
+                death();
             }
             StartCoroutine(HealthRechargeDelayCounter());
         }
@@ -93,6 +94,10 @@ public class HealthAndShield : MonoBehaviour
         HealthRechargeActive = false;
         yield return new WaitForSeconds(healthRechargeDelay);
         HealthRechargeActive = true;
+    }
+
+    public void death(){
+
     }
 
 }
